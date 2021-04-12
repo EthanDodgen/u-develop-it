@@ -15,10 +15,10 @@ Back end development for a voting app.
 ## Language(s)
 
 Language(s) used in this project:
-Javascript
-SQL
-Node.js
-Express.js
+* Javascript
+* SQL
+* Node.js
+* Express.js
 
 ## Questions
 
