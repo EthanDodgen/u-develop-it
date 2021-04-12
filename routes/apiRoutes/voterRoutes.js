@@ -115,7 +115,7 @@ router.delete('/voter/:id', (req, res) => {
             res.status(400).json({
                 error: res.message
             })
-            return;
+            return
         }
 
         res.json({
