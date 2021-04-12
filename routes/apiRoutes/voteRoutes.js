@@ -24,9 +24,9 @@ router.get('/votes', (req, res) => {
         res.json({
             message: 'success',
             data: rows
-        });
-    });
-});
+        })
+    })
+})
 
 // Create a vote record
 router.post('/vote', ({
