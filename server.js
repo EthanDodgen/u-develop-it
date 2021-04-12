@@ -3,8 +3,6 @@ const inputCheck = require('./utils/inputCheck')
 const db = require('./db/database')
 const apiRoutes = require('./routes/apiRoutes')
 
-
-
 const PORT = process.env.PORT || 3001
 const app = express()
 
@@ -73,6 +71,12 @@ app.delete('/api/party/:id', (req, res) => {
 })
 
 
+// Start server after DB connection
+db.on('open', () => {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`)
+    })
+})
 
 // Default response for any other requests(Not Found) Catch all
 app.use((req, res) => {
@@ -81,10 +85,5 @@ app.use((req, res) => {
 
 app.use('/api', apiRoutes)
 
-// Start server after DB connection
-db.on('open', () => {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`)
-    })
-})
+
 
